@@ -19,8 +19,7 @@ set expandtab " tabs are spaces uniformly
 set ai "Auto Indent
 set si " Smart Indent
 " }}}
-"UI {{{
-
+"UI {{{ 
 set number " show line numbers
 set showcmd " show command at the bottom
 set cursorline " marks current line
@@ -90,6 +89,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "}}}
@@ -109,6 +109,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗✗"
 let g:syntastic_warning_symbol = "⚠⚠"
 " }}}
+" COC {{{
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+		  \ pumvisible() ? "\<C-n>" :
+		  \ <SID>check_back_space() ? "\<TAB>" :
+		  \ coc#refresh() 
+" }}}    
 " Autogroups {{{
 " }}}
 " Buffer Saving {{{

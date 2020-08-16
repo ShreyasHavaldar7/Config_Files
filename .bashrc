@@ -7,6 +7,7 @@ alias q='exit'
 alias c='clear'
 alias v='vim'
 alias h='history'
+alias bt='pulseaudio --kill && pulseaudio --start'
 # confirmation #
 alias mv='mv -i'
 alias cp='cp -i'
@@ -14,6 +15,7 @@ alias ln='ln -i'
 alias rm='rm -i'
 alias gh='history|grep'
 alias cpv='rsync -ah --info=progress2'
+alias vim=/usr/local/bin/vim
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
