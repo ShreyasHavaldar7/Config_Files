@@ -8,6 +8,7 @@ alias c='clear'
 alias v='vim'
 alias h='history'
 alias bt='pulseaudio --kill && pulseaudio --start'
+alias wf=' echo "options rtl8188ee swenc=Y ips=N" | sudo tee /etc/modprobe.d/rtl8188ee.conf'
 # confirmation #
 alias mv='mv -i'
 alias cp='cp -i'
